@@ -5,6 +5,7 @@ import bankocr.kata.Main;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 import java.net.URL;
+import java.nio.file.Path;
 
 import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.MatcherAssert.assertThat;
@@ -19,8 +20,8 @@ public class ApplicationRunner {
         System.setOut(new PrintStream(outputStream));
     }
 
-    public void parseFile(URL fileURL) {
-        Main.main(fileURL.getFile());
+    public void parseFile(Path filePath) {
+        Main.main(filePath.toString());
     }
 
     public void showsAccountNumber(String accountNumberAsText) {
