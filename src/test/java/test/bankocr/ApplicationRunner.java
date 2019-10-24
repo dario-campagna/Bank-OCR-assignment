@@ -3,8 +3,8 @@ package test.bankocr;
 import bankocr.kata.Main;
 
 import java.io.ByteArrayOutputStream;
+import java.io.IOException;
 import java.io.PrintStream;
-import java.net.URL;
 import java.nio.file.Path;
 
 import static org.hamcrest.CoreMatchers.equalTo;
@@ -20,7 +20,7 @@ public class ApplicationRunner {
         System.setOut(new PrintStream(outputStream));
     }
 
-    public void parseFile(Path filePath) {
+    public void parseFile(Path filePath) throws IOException {
         Main.main(filePath.toString());
     }
 

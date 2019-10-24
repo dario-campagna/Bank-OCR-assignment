@@ -2,12 +2,14 @@ package bankocr.kata;
 
 public class AccountNumber {
 
-    public AccountNumber(String[] entryLines) {
+    private Entry entry;
 
+    public AccountNumber(Entry entry) {
+        this.entry = entry;
     }
 
     @Override
     public String toString() {
-        return "000000000";
+        return entry.toString();
     }
 }

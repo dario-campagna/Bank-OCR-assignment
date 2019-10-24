@@ -1,10 +1,10 @@
 package test.bankocr.parse;
 
+import bankocr.kata.Entry;
 import bankocr.kata.EntryReader;
 import org.junit.jupiter.api.Test;
 import test.bankocr.BankOcrAcceptanceTest;
 
-import java.net.URISyntaxException;
 import java.net.URL;
 import java.nio.file.Path;
 
@@ -15,12 +15,18 @@ import static org.hamcrest.Matchers.is;
 public class ReadEntryTest {
 
     @Test
-    void allZerosEntry() throws URISyntaxException {
+    void allZerosEntry() throws Exception {
         URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
         EntryReader reader = new EntryReader(Path.of(allZerosSingleEntry.toURI()));
-        String[] entryLines = reader.readEntry();
-        assertThat(entryLines[0], is(equalTo(" _  _  _  _  _  _  _  _  _ ")));
-        assertThat(entryLines[1], is(equalTo("| || || || || || || || || |")));
-        assertThat(entryLines[2], is(equalTo("|_||_||_||_||_||_||_||_||_|")));
+        Entry entry = reader.newReadEntry();
+        assertThat(entry.toString(), is(equalTo("000000000")));
+    }
+
+    @Test
+    void allOnesEntry() throws Exception {
+        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
+        EntryReader reader = new EntryReader(Path.of(allOnesSingleEntry.toURI()));
+        Entry entry = reader.newReadEntry();
+        assertThat(entry.toString(), is(equalTo("111111111")));
     }
 }
