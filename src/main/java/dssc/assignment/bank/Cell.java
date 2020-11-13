@@ -1,4 +1,4 @@
-package bankocr.kata;
+package dssc.assignment.bank;
 
 public class Cell {
 

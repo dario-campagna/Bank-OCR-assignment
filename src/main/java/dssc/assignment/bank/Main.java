@@ -1,4 +1,4 @@
-package bankocr.kata;
+package dssc.assignment.bank;
 
 import java.io.IOException;
 import java.nio.file.Path;

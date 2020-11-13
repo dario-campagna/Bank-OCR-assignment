@@ -1,24 +1,22 @@
-package test.bankocr.parse;
+package dssc.assignment.bank.parse;
 
-import bankocr.kata.AccountNumber;
-import bankocr.kata.Entry;
+import dssc.assignment.bank.AccountNumber;
+import dssc.assignment.bank.Entry;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class PrintAccountNumberTest {
 
     @Test
     void allZerosEntry() {
         Entry entry = new Entry(" _  _  _  _  _  _  _  _  _ ","| || || || || || || || || |","|_||_||_||_||_||_||_||_||_|");
-        assertThat(new AccountNumber(entry).toString(), is(equalTo("000000000")));
+        assertEquals("000000000", new AccountNumber(entry).toString());
     }
 
     @Test
     void allOnesEntry() {
         Entry entry = new Entry("                           ", "  |  |  |  |  |  |  |  |  |", "  |  |  |  |  |  |  |  |  |");
-        assertThat(new AccountNumber(entry).toString(), is(equalTo("111111111")));
+        assertEquals("111111111", new AccountNumber(entry).toString());
     }
 }

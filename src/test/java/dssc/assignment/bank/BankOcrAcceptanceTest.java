@@ -1,4 +1,4 @@
-package test.bankocr;
+package dssc.assignment.bank;
 
 import org.junit.jupiter.api.Test;
 

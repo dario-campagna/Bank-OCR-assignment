@@ -1,16 +1,14 @@
-package test.bankocr.parse;
+package dssc.assignment.bank.parse;
 
-import bankocr.kata.Entry;
-import bankocr.kata.EntryReader;
+import dssc.assignment.bank.BankOcrAcceptanceTest;
+import dssc.assignment.bank.Entry;
+import dssc.assignment.bank.EntryReader;
 import org.junit.jupiter.api.Test;
-import test.bankocr.BankOcrAcceptanceTest;
 
 import java.net.URL;
 import java.nio.file.Path;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ReadEntryTest {
 
@@ -19,7 +17,7 @@ public class ReadEntryTest {
         URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
         EntryReader reader = new EntryReader(Path.of(allZerosSingleEntry.toURI()));
         Entry entry = reader.newReadEntry();
-        assertThat(entry.toString(), is(equalTo("000000000")));
+        assertEquals("000000000", entry.toString());
     }
 
     @Test
@@ -27,6 +25,6 @@ public class ReadEntryTest {
         URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
         EntryReader reader = new EntryReader(Path.of(allOnesSingleEntry.toURI()));
         Entry entry = reader.newReadEntry();
-        assertThat(entry.toString(), is(equalTo("111111111")));
+        assertEquals("111111111", entry.toString());
     }
 }

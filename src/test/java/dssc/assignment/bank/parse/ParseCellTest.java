@@ -1,11 +1,9 @@
-package test.bankocr.parse;
+package dssc.assignment.bank.parse;
 
-import bankocr.kata.Cell;
+import dssc.assignment.bank.Cell;
 import org.junit.jupiter.api.Test;
 
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ParseCellTest {
 
@@ -15,7 +13,7 @@ public class ParseCellTest {
                         " _ " +
                         "| |" +
                         "|_|";
-        assertThat(new Cell(zeroAsText).toString(), is(equalTo("0")));
+        assertEquals("0", new Cell(zeroAsText).toString());
     }
 
     @Test
@@ -24,6 +22,6 @@ public class ParseCellTest {
                         "   " +
                         "  |" +
                         "  |";
-        assertThat(new Cell(zeroAsText).toString(), is(equalTo("1")));
+        assertEquals("1", new Cell(zeroAsText).toString());
     }
 }

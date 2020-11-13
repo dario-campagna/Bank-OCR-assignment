@@ -1,4 +1,4 @@
-package bankocr.kata;
+package dssc.assignment.bank;
 
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;

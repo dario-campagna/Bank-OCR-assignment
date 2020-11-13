@@ -1,15 +1,11 @@
-package test.bankocr;
-
-import bankocr.kata.Main;
+package dssc.assignment.bank;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.file.Path;
 
-import static org.hamcrest.CoreMatchers.equalTo;
-import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.is;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationRunner {
 
@@ -25,7 +21,7 @@ public class ApplicationRunner {
     }
 
     public void showsAccountNumber(String accountNumberAsText) {
-        assertThat(outputStream.toString(), is(equalTo(accountNumberAsText)));
+        assertEquals(accountNumberAsText, outputStream.toString());
     }
 
 }
