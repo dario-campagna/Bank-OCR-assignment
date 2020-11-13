@@ -9,6 +9,12 @@ application {
     mainClass = 'dssc.assignment.bank.Main'
 }
 
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(11)
+    }
+}
+
 repositories {
     mavenCentral()
 }
