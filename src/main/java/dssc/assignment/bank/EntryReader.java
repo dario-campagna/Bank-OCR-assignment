@@ -1,21 +1,19 @@
 package dssc.assignment.bank;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.List;
 
 public class EntryReader {
 
-    private final BufferedReader bufferedReader;
+    private final List<String> fileLines;
 
-    public EntryReader(Path filePath) throws FileNotFoundException {
-        FileReader fileReader = new FileReader(filePath.toFile());
-        bufferedReader = new BufferedReader(fileReader);
+    public EntryReader(Path filePath) throws IOException {
+        fileLines = Files.readAllLines(filePath);
     }
 
-    public Entry newReadEntry() throws IOException {
-        return new Entry(bufferedReader.readLine(), bufferedReader.readLine(), bufferedReader.readLine());
+    public Entry readEntry() {
+        return new Entry(fileLines.get(0), fileLines.get(1), fileLines.get(2));
     }
 }
