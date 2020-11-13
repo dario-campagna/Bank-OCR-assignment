@@ -1,6 +1,6 @@
 # Bank OCR assignment
 
-[![Build Status](https://travis-ci.com/dario-campagna/bank-ocr-gradle.svg?branch=master)](https://travis-ci.com/dario-campagna/bank-ocr-gradle)
+[![Build Status](https://travis-ci.com/dario-campagna/Bank-OCR-assignment.svg?branch=master)](https://travis-ci.com/dario-campagna/Bank-OCR-assignment)
 
 Work in a small group on the [Bank OCR kata](http://codingdojo.org/kata/BankOCR/) by using Java, Gradle and Travis CI.
 
