@@ -1,9 +1,13 @@
 plugins {
-    id 'java'
+    id 'application'
 }
 
 group 'dssc.assignment.bank'
 version '1.0'
+
+application {
+    mainClass = 'dssc.assignment.bank.Main'
+}
 
 repositories {
     mavenCentral()
