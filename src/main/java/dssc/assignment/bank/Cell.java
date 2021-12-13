@@ -68,4 +68,19 @@ public class Cell {
     public String toString() {
         return cellTextToString.get(cellAsText);
     }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Cell cell = (Cell) o;
+
+        return cellAsText.equals(cell.cellAsText);
+    }
+
+    @Override
+    public int hashCode() {
+        return cellAsText.hashCode();
+    }
 }
