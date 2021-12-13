@@ -1,5 +1,6 @@
 package dssc.assignment.bank;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import java.net.URL;
@@ -25,5 +26,16 @@ public class BankOcrAcceptanceTest {
         application.parseFile(Path.of(allOnesSingleEntry.toURI()));
 
         application.showsAccountNumber(String.format("111111111%n"));
+    }
+
+    @Test
+    @Disabled
+    void parseFileWithSingleOneToNineDigitsAndShowActualAccountNumberOnConsole() throws Exception {
+        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOneToNineDigitEntry");
+        ApplicationRunner application = new ApplicationRunner();
+
+        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
+
+        application.showsAccountNumber(String.format("123456789%n"));
     }
 }
