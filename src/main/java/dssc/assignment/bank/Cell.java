@@ -1,5 +1,8 @@
 package dssc.assignment.bank;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Cell {
 
     private static final String ZERO_CELL =
@@ -14,6 +17,12 @@ public class Cell {
                     " _ " +
                     " _|" +
                     "|_ ";
+    private static final Map<String, String> cellTextToString = new HashMap<>() {{
+        put(ZERO_CELL, "0");
+        put(ONE_CELL, "1");
+        put(TWO_CELL, "2");
+    }};
+
     private String cellAsText;
 
     public Cell(String cellAsText) {
@@ -22,12 +31,6 @@ public class Cell {
 
     @Override
     public String toString() {
-        if (ZERO_CELL.equals(cellAsText)) {
-            return "0";
-        } else if (TWO_CELL.equals(cellAsText)) {
-            return "2";
-        } else {
-            return "1";
-        }
+        return cellTextToString.get(cellAsText);
     }
 }
