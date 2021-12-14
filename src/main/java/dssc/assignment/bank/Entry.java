@@ -38,4 +38,12 @@ public class Entry {
     public int hashCode() {
         return cells.hashCode();
     }
+
+    public int customSum() {
+        int sum = 0;
+        for (int i = 0; i < cells.size(); i++) {
+            sum += cells.get(i).asNumber()*(cells.size()-i);
+        }
+        return sum;
+    }
 }

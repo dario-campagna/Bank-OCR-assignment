@@ -12,4 +12,8 @@ public class AccountNumber {
     public String toString() {
         return entry.toString();
     }
+
+    public int checksum() {
+        return entry.customSum() % 11;
+    }
 }

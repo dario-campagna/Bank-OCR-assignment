@@ -25,7 +25,7 @@ public class BankOcrAcceptanceTest {
 
         application.parseFile(Path.of(allOnesSingleEntry.toURI()));
 
-        application.showsAccountNumber(String.format("111111111%n"));
+        application.showsAccountNumber(String.format("111111111 ERR%n"));
     }
 
     @Test
@@ -45,6 +45,6 @@ public class BankOcrAcceptanceTest {
 
         application.parseFile(Path.of(multipleEntries.toURI()));
 
-        application.showsAccountNumber(String.format("200800000%n999999999%n490867713%n"));
+        application.showsAccountNumber(String.format("200800000%n999999999 ERR%n490867713 ERR%n"));
     }
 }

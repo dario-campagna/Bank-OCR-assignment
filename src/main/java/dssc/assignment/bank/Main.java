@@ -8,6 +8,12 @@ public class Main {
         EntryReader reader = new EntryReader(Path.of(args[0]));
         reader.readAllEntries().stream()
                 .map(AccountNumber::new)
-                .forEach(System.out::println);
+                .forEach(accountNumber -> {
+                    if (accountNumber.checksum() == 0) {
+                        System.out.println(accountNumber);
+                    } else {
+                        System.out.println(accountNumber + " ERR");
+                    }
+                });
     }
 }

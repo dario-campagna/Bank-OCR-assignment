@@ -45,17 +45,17 @@ public class Cell {
                     " _ " +
                     "|_|" +
                     " _|";
-    private static final Map<String, String> cellTextToString = new HashMap<>() {{
-        put(ZERO_CELL, "0");
-        put(ONE_CELL, "1");
-        put(TWO_CELL, "2");
-        put(THREE_CELL, "3");
-        put(FOUR_CELL, "4");
-        put(FIVE_CELL, "5");
-        put(SIX_CELL, "6");
-        put(SEVEN_CELL, "7");
-        put(EIGHT_CELL, "8");
-        put(NINE_CELL, "9");
+    private static final Map<String, Integer> cellTextToInt = new HashMap<>() {{
+        put(ZERO_CELL, 0);
+        put(ONE_CELL, 1);
+        put(TWO_CELL, 2);
+        put(THREE_CELL, 3);
+        put(FOUR_CELL, 4);
+        put(FIVE_CELL, 5);
+        put(SIX_CELL, 6);
+        put(SEVEN_CELL, 7);
+        put(EIGHT_CELL, 8);
+        put(NINE_CELL, 9);
     }};
 
     private String cellAsText;
@@ -66,7 +66,7 @@ public class Cell {
 
     @Override
     public String toString() {
-        return cellTextToString.get(cellAsText);
+        return cellTextToInt.get(cellAsText).toString();
     }
 
     @Override
@@ -82,5 +82,9 @@ public class Cell {
     @Override
     public int hashCode() {
         return cellAsText.hashCode();
+    }
+
+    public int asNumber() {
+        return cellTextToInt.get(cellAsText);
     }
 }
