@@ -15,22 +15,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 public class ReadEntryTest {
 
     @Test
-    void allZerosEntry() throws Exception {
-        URL allZerosSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allZerosEntry");
-        EntryReader reader = new EntryReader(Path.of(allZerosSingleEntry.toURI()));
-        Entry entry = reader.readEntry();
-        assertEquals("000000000", entry.toString());
-    }
-
-    @Test
-    void allOnesEntry() throws Exception {
-        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
-        EntryReader reader = new EntryReader(Path.of(allOnesSingleEntry.toURI()));
-        Entry entry = reader.readEntry();
-        assertEquals("111111111", entry.toString());
-    }
-
-    @Test
     void allEntries() throws Exception {
         URL multipleEntries = BankOcrAcceptanceTest.class.getClassLoader().getResource("multipleEntries");
         EntryReader reader = new EntryReader(Path.of(multipleEntries.toURI()));
