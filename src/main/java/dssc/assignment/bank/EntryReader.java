@@ -14,10 +14,6 @@ public class EntryReader {
         fileLines = Files.readAllLines(filePath);
     }
 
-    public Entry readEntry() {
-        return new Entry(fileLines.get(0), fileLines.get(1), fileLines.get(2));
-    }
-
     public List<Entry> readAllEntries() {
         List<Entry> entries = new ArrayList<>();
         for (int i = 0; i < fileLines.size(); i+=4) {
