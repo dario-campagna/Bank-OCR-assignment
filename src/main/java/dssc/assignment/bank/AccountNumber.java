@@ -2,7 +2,7 @@ package dssc.assignment.bank;
 
 public class AccountNumber {
 
-    private Entry entry;
+    private final Entry entry;
 
     public AccountNumber(Entry entry) {
         this.entry = entry;

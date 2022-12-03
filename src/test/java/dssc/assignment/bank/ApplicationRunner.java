@@ -9,10 +9,9 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class ApplicationRunner {
 
-    private ByteArrayOutputStream outputStream;
+    private final ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
 
     public ApplicationRunner() {
-        outputStream = new ByteArrayOutputStream();
         System.setOut(new PrintStream(outputStream));
     }
 

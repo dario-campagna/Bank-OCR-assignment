@@ -58,7 +58,7 @@ public class Cell {
         put(NINE_CELL, "9");
     }};
 
-    private String cellAsText;
+    private final String cellAsText;
 
     public Cell(String cellAsText) {
         this.cellAsText = cellAsText;
