@@ -19,16 +19,6 @@ public class BankOcrAcceptanceTest {
     }
 
     @Test
-    public void parseFileWithSingleAllOnesEntryAndShowActualAccountNumberOnConsole() throws Exception {
-        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
-        ApplicationRunner application = new ApplicationRunner();
-
-        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
-
-        application.showsAccountNumber(String.format("111111111%n"));
-    }
-
-    @Test
     void parseFileWithSingleOneToNineDigitsAndShowActualAccountNumberOnConsole() throws Exception {
         URL allOneToNineDigitsEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOneToNineDigitEntry");
         ApplicationRunner application = new ApplicationRunner();
@@ -45,6 +35,28 @@ public class BankOcrAcceptanceTest {
 
         application.parseFile(Path.of(multipleEntries.toURI()));
 
-        application.showsAccountNumber(String.format("200800000%n999999999%n490867713%n"));
+        application.showsAccountNumber(String.format("200800000%n000000051%n777777177%n"));
+    }
+
+    @Test
+    @Disabled
+    public void parseFileWithSingleInvalidEntryAndShowERRAccountNumberOnConsole() throws Exception {
+        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("allOnesEntry");
+        ApplicationRunner application = new ApplicationRunner();
+
+        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
+
+        application.showsAccountNumber(String.format("111111111 ERR%n"));
+    }
+
+    @Test
+    @Disabled
+    public void parseFileWithEntryWithIllegibleCharactersAndShowILLAccountNumberOnConsole() throws Exception {
+        URL allOnesSingleEntry = BankOcrAcceptanceTest.class.getClassLoader().getResource("entryIllChars");
+        ApplicationRunner application = new ApplicationRunner();
+
+        application.parseFile(Path.of(allOnesSingleEntry.toURI()));
+
+        application.showsAccountNumber(String.format("1234?678? ILL%n"));
     }
 }

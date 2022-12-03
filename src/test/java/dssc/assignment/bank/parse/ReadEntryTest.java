@@ -20,8 +20,8 @@ public class ReadEntryTest {
         EntryReader reader = new EntryReader(Path.of(multipleEntries.toURI()));
         List<Entry> expectedEntries = List.of(
                 new Entry(" _  _  _  _  _  _  _  _  _ ", " _|| || ||_|| || || || || |", "|_ |_||_||_||_||_||_||_||_|"),
-                new Entry(" _  _  _  _  _  _  _  _  _ ", "|_||_||_||_||_||_||_||_||_|", " _| _| _| _| _| _| _| _| _|"),
-                new Entry("    _  _  _  _  _  _     _ ", "|_||_|| ||_||_   |  |  | _|", "  | _||_||_||_|  |  |  | _|")
+                new Entry(" _  _  _  _  _  _  _  _    ", "| || || || || || || ||_   |", "|_||_||_||_||_||_||_| _|  |"),
+                new Entry(" _  _  _  _  _  _     _  _ ", "  |  |  |  |  |  |  |  |  |", "  |  |  |  |  |  |  |  |  |")
         );
 
         assertEquals(expectedEntries, reader.readAllEntries());
